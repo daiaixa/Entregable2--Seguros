@@ -7,12 +7,15 @@ public class Cliente extends Persona {
 	
 	private static int id; //para generar el codigo unico y secuencial
 	
-	public Cliente(int edad) {
+	
+	public Cliente(String apellido, DocIdentidad docu, int edad) {
+		super(apellido, docu);
+
 		id ++;
-		
 		this.edad = edad;
 		this.codigoCliente = id;
 	}
+	
 
 	public int getCodigoCliente() {
 		return codigoCliente;
@@ -54,9 +57,10 @@ public class Cliente extends Persona {
 	
 	@Override
 	public String toString() {
-		return String.format(" %d - %s - %s", this.codigoCliente,
+		return String.format("Codigo: %d - Apellido: %s - Numero y tipo de Documento: %s",
+				this.codigoCliente,
 				this.getApellido(),
-				this.getDocIdentidad());   //COMO DEVUELVE EL DOCUMENTO DE IDENTIDAD ? 
+				this.getDocIdentidad().toString());   //COMO DEVUELVE EL DOCUMENTO DE IDENTIDAD ? 
 	}
 	
 

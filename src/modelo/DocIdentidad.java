@@ -44,8 +44,7 @@ public class DocIdentidad {
 	
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return this.numDocumento + " " + this.tipoDocumento;
 	}
 
 

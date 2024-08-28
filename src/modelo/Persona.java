@@ -7,14 +7,10 @@ public class Persona {
 	private String apellido;
 
 // CONSTRUCTOR
-	public Persona() {
-		// DUDA, SI NOSOTROS PIDIERAMOS COMO PARAMETRO EL DNI
-		// ANTES, POR LOGICA HAY QUE CREAR EL OBJETO DOCIDENTIDAD
-	}
+
 	
-	
-	public Persona(String nombre, DocIdentidad docu) {
-		this.nombre = nombre;
+	public Persona(String apellido, DocIdentidad docu) {
+		this.apellido = apellido;
 		this.docIdentidad = docu;
 	}
 	

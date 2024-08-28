@@ -5,13 +5,13 @@ public abstract class Poliza {
 	private int codigo;
 	private double sumaAsegurada;
 	private double cuotaMensual; //como deberia acceder luego para que el cliente pague ?
-	private Persona beneficiario;
+	private Cliente beneficiario;
 	
 	private static int id; //para generar el codigo unico y secuencial
 
 	
 // CONSTRUCTOR
-	public Poliza(Persona beneficiario) {		
+	public Poliza(Cliente beneficiario) {		
 		id ++;
 		this.beneficiario = beneficiario;
 		this.codigo = id;
@@ -43,11 +43,11 @@ public abstract class Poliza {
 		this.cuotaMensual = cuotaMensual;
 	}
 
-	public Persona getBeneficiario() {
+	public Cliente getBeneficiario() {
 		return beneficiario;
 	}
 
-	public void setBeneficiario(Persona beneficiario) {
+	public void setBeneficiario(Cliente beneficiario) {
 		this.beneficiario = beneficiario;
 	}
 
@@ -60,7 +60,6 @@ public abstract class Poliza {
 	}
 	
 
-// METODOS
-	public abstract void calcularSumaAsegurada(); // cada uno va a calcularlo como le corresponde...	
+// METODOS	
 	public abstract double calcularCuota(); // cada uno va a calcularlo como le corresponde...	
 }

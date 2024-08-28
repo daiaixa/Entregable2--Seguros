@@ -3,23 +3,26 @@ package modelo;
 public class Vehiculo extends Poliza {
 
 	private String marca;
-	private String modelo;
+	private int modelo;
 	
+	final int ANIO_ACTUAL = 2024;
 	
 // CONSTRUCTOR	
-	public Vehiculo(Persona beneficiario, String modelo) {
+	public Vehiculo(Cliente beneficiario, int modelo, double valorVehiculo) {
 		super(beneficiario);
 		this.modelo = modelo;
+		this.setSumaAsegurada(valorVehiculo);
+		this.calcularCuota();
 	}
 
 	
 // GETTERS Y SETTERS 
-	public String getModelo() {
+	public int getModelo() {
 		return modelo;
 	}
 
 
-	public void setModelo(String modelo) {
+	public void setModelo(int modelo) {
 		this.modelo = modelo;
 	}
 
@@ -35,17 +38,22 @@ public class Vehiculo extends Poliza {
 
 	@Override
 	public double calcularCuota() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
-
-	@Override
-	public void calcularSumaAsegurada() {
-		// TODO Auto-generated method stub
+		int antiguedad = ANIO_ACTUAL - this.getModelo();
+		double porcentajeADescontar = antiguedad * 2;		
 		
+		double cuota = (this.getSumaAsegurada() * porcentajeADescontar)/100;
+		this.setCuotaMensual(cuota);
+		
+		return cuota;
 	}
-	
-	 
+
+
+
+	/*  Para vehículos: Los vehículos, son un caso particular de los bienes muebles, en donde
+además se desea conocer la marca y modelo (año de patentamiento). En este caso la
+cuota mensual será igual que para los bienes muebles menos un 2% por año de
+antigüedad del vehículo.  */
+
 
 }
