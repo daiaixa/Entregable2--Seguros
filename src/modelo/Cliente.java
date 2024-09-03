@@ -7,7 +7,7 @@ public class Cliente extends Persona {
 	
 	private static int id; //para generar el codigo unico y secuencial
 	
-	
+// COSTRUCTOR
 	public Cliente(String apellido, DocIdentidad docu, int edad) {
 		super(apellido, docu);
 
@@ -16,7 +16,7 @@ public class Cliente extends Persona {
 		this.codigoCliente = id;
 	}
 	
-
+// GETTERS Y SETTERS
 	public int getCodigoCliente() {
 		return codigoCliente;
 	}

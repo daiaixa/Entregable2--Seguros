@@ -14,8 +14,6 @@ public class BienMueble extends Poliza {
 	@Override
 	public double calcularCuota() {
 		double cuota = this.getSumaAsegurada()/96;
-		this.setCuotaMensual(cuota);
-
 		return cuota;
 	}
 

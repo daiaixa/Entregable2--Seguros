@@ -4,7 +4,6 @@ public abstract class Poliza {
 
 	private int codigo;
 	private double sumaAsegurada;
-	private double cuotaMensual; //como deberia acceder luego para que el cliente pague ?
 	private Cliente beneficiario;
 	
 	private static int id; //para generar el codigo unico y secuencial
@@ -35,13 +34,6 @@ public abstract class Poliza {
 		this.sumaAsegurada = sumaAsegurada;
 	}
 
-	public double getCuotaMensual() {
-		return cuotaMensual;
-	}
-
-	public void setCuotaMensual(double cuotaMensual) {
-		this.cuotaMensual = cuotaMensual;
-	}
 
 	public Cliente getBeneficiario() {
 		return beneficiario;
@@ -53,10 +45,6 @@ public abstract class Poliza {
 
 	public static int getId() {
 		return id;
-	}
-
-	public static void setId(int id) {
-		Poliza.id = id;
 	}
 	
 

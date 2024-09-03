@@ -1,7 +1,7 @@
-package modelo;
+package programaPrincipal;
 
-import java.text.NumberFormat;
-import java.util.Locale;
+
+import modelo.*;
 
 public class Main {
 
@@ -27,8 +27,6 @@ public class Main {
 		System.out.println(cliente2.toString());
 		System.out.println(cliente3.toString());
 		
-	// UNA SOLA PERSONA PARA QUE SEA LA BENEFICIADA EN UN SEGURO DE VIDA
-		Persona pers = new Persona("Martinez", docu4); //NO PUEDO CONVERTIR UNA PERSONA A UN CLIENTE...
 		
 	//LAS CUATRO POLIZAS DISTINTAS
 		Vida polizaVida = new Vida(cliente1, 50000.00); //SI QUIERO USAR pers ME TIRA UN ERROR
@@ -43,18 +41,13 @@ public class Main {
 	//GUARDO LAS POLIZAS EN UNA LISTA PARA LUEGO ITERAR
 		Poliza[] listaDePolizas = {polizaBnInmueble, polizaBnMueble, polizaVehiculo, polizaVida};
 		
-	//ITERACION DE LA LISTA DE POLIZAS
-		for (Poliza poliza : listaDePolizas) {
-		//UTILIZO LA CLASE NumberFormat PARA MEJORAR SU VISUALIZACIÓN 
-			NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(Locale.US);
-			
-			System.out.println(String.format("El cliente n°: %d; Poliza n°: %d; Suma asegurada: %s; Cuota: %s", 
-					poliza.getBeneficiario().getCodigoCliente(),
-					poliza.getCodigo(),
-					formatoMoneda.format(poliza.getSumaAsegurada()),
-					formatoMoneda.format(poliza.getCuotaMensual())));			
-		}
 		
+	//CREO LA CLASE DE LA EMPRESA ASEGURADORA PARA PASARLE LA LISTA
+		EmpresaSeguros empresaSeguros = new EmpresaSeguros(listaDePolizas);
+		
+		empresaSeguros.listarPolizas();
+			
+			
 	}
 
 }

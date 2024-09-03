@@ -5,7 +5,7 @@ public class Vehiculo extends Poliza {
 	private String marca;
 	private int modelo;
 	
-	final int ANIO_ACTUAL = 2024;
+	private final int ANIO_ACTUAL = 2024;
 	
 // CONSTRUCTOR	
 	public Vehiculo(Cliente beneficiario, int modelo, double valorVehiculo) {
@@ -43,8 +43,7 @@ public class Vehiculo extends Poliza {
 		double porcentajeADescontar = antiguedad * 2;		
 		
 		double cuota = (this.getSumaAsegurada() * porcentajeADescontar)/100;
-		this.setCuotaMensual(cuota);
-		
+
 		return cuota;
 	}
 

@@ -31,7 +31,6 @@ public class Vida extends Poliza {
 		if (this.getBeneficiario().getEdad() > 60) { //No puedo convertir una persona a cliente, no podia acceder a la edad...
 			cuota += INCREMENTADOR;
 		}
-		this.setCuotaMensual(cuota); //deberia tenerlo como un atributo?
 		return cuota;
 	}
 
