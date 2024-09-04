@@ -5,12 +5,12 @@ public class DocIdentidad {
 	private int numDocumento;
 	private TipoDocumento tipoDocumento;
 	
-	
+// CONSTRUCTOR
 	public DocIdentidad() {
 		
 	}
 	
-	
+// GETTERS Y SETTERS
 	public DocIdentidad(int numDoc, TipoDocumento tipoDoc) {
 		this.numDocumento = numDoc;
 		this.tipoDocumento = tipoDoc;
@@ -39,9 +39,6 @@ public class DocIdentidad {
 
 	
 // METODOS
-	
-	
-	
 	@Override
 	public String toString() {
 		return this.numDocumento + " " + this.tipoDocumento;
@@ -58,8 +55,5 @@ public class DocIdentidad {
 		}
 		return super.equals(obj);
 	}
-	
-	
-	
 	
 }

@@ -4,7 +4,7 @@ public abstract class Poliza {
 
 	private int codigo;
 	private double sumaAsegurada;
-	private Cliente beneficiario;
+	private Cliente beneficiario; 
 	
 	private static int id; //para generar el codigo unico y secuencial
 

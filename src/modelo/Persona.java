@@ -7,8 +7,6 @@ public class Persona {
 	private String apellido;
 
 // CONSTRUCTOR
-
-	
 	public Persona(String apellido, DocIdentidad docu) {
 		this.apellido = apellido;
 		this.docIdentidad = docu;
@@ -43,27 +41,6 @@ public class Persona {
 
 
 //METODOS 
-
-	
-	
-	
-	/*
-	 * Persona pers = new Persona();
-	 *utilizamos el enumerado:
-	 * pers.setTipoDocumento(TipoDocumento.DNI);
-	 * 
-	 * pero necesariamente necesito crear un documennto para setear la informacion de la persona
-	 * Documento docu = new Documento();
-	 * 
-	 * docu.setTipoDocumento(DNI)
-	 * docu.setNroDocumento(12) 
-	 * 
-	 * pers.setDocumento(docu) o tambien se puede hacer:
-	 * pers.getDocumento().getTipo / o setTipo() o buen getNumero() o setNumero()
-	 * 
-	 * 
-	 * */
-	
 	
 	
 }

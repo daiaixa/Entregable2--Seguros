@@ -15,7 +15,9 @@ public class Vida extends Poliza {
 		this.setSumaAsegurada(this.sueldo*MULTIPLICADOR);
 		this.calcularCuota();
 	}
+	
 
+// GETTERS Y SETTERS
 	public double getSueldo() {
 		return sueldo;
 	}
@@ -24,6 +26,8 @@ public class Vida extends Poliza {
 		this.sueldo = sueldo;
 	}
 
+	
+// METODOS
 	@Override
 	public double calcularCuota() {
 		double cuota = this.getSumaAsegurada() * PORCENTAJE_CUOTA;

@@ -36,6 +36,7 @@ public class Vehiculo extends Poliza {
 	}
 
 
+// METODOS
 	@Override
 	public double calcularCuota() {
 
@@ -46,13 +47,5 @@ public class Vehiculo extends Poliza {
 
 		return cuota;
 	}
-
-
-
-	/*  Para vehículos: Los vehículos, son un caso particular de los bienes muebles, en donde
-además se desea conocer la marca y modelo (año de patentamiento). En este caso la
-cuota mensual será igual que para los bienes muebles menos un 2% por año de
-antigüedad del vehículo.  */
-
 
 }

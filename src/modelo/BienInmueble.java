@@ -29,7 +29,7 @@ public class BienInmueble extends Poliza {
 	}
 
 	
-
+// METODOS
 	public void calcularSumaAsegurada() {
 		double sumaAsegurada = this.metrosCuadrados * IMPORTE_MTS2;
 		
