@@ -2,16 +2,19 @@ package modelo;
 
 public abstract class Poliza {
 
-	private int codigo;
-	private double sumaAsegurada;
-	private Cliente beneficiario; 
+	private int codigo; 
+	private Cliente cliente;
+	private Persona beneficiario;
 	
 	private static int id; //para generar el codigo unico y secuencial
 
 	
 // CONSTRUCTOR
-	public Poliza(Cliente beneficiario) {		
+	public Poliza() {}
+	
+	public Poliza(Cliente cliente, Persona beneficiario) {		
 		id ++;
+		this.cliente = cliente;
 		this.beneficiario = beneficiario;
 		this.codigo = id;
 	}
@@ -26,21 +29,20 @@ public abstract class Poliza {
 		this.codigo = codigo;
 	}
 
-	public double getSumaAsegurada() {
-		return sumaAsegurada;
+	public Cliente getCliente() {
+		return cliente;
 	}
 
-	public void setSumaAsegurada(double sumaAsegurada) {
-		this.sumaAsegurada = sumaAsegurada;
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
-
-
-	public Cliente getBeneficiario() {
-		return beneficiario;
-	}
-
-	public void setBeneficiario(Cliente beneficiario) {
+	
+	public void setBeneficiario(Persona beneficiario) {
 		this.beneficiario = beneficiario;
+	}
+	
+	public Persona getBeneficiario() {
+		return beneficiario;
 	}
 
 	public static int getId() {
@@ -50,4 +52,6 @@ public abstract class Poliza {
 
 // METODOS	
 	public abstract double calcularCuota(); // cada uno va a calcularlo como le corresponde...	
+	public abstract double calcularSumaAsegurada();
+
 }

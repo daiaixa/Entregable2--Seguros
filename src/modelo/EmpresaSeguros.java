@@ -31,8 +31,8 @@ public class EmpresaSeguros {
 		double total = 0;
 		for (Poliza poliza : this.listaPolizas) {		
 			System.out.println(String.format("El cliente n°: %d; Poliza n°: %d; Suma asegurada: %s; Cuota: %s",
-					poliza.getBeneficiario().getCodigoCliente(), poliza.getCodigo(),
-					formatoMoneda.format(poliza.getSumaAsegurada()), formatoMoneda.format(poliza.calcularCuota())));
+					poliza.getCliente().getCodigoCliente(), poliza.getCodigo(), //TODO si yo paso a persona, no podria obtener el numero de cliente...
+					formatoMoneda.format(poliza.calcularSumaAsegurada()), formatoMoneda.format(poliza.calcularCuota())));
 			total += poliza.calcularCuota();
 		}
 		

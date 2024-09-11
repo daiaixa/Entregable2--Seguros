@@ -1,6 +1,6 @@
 package modelo;
 
-public class Vehiculo extends Poliza {
+public class PolizaVehiculo extends BienMueble {
 
 	private String marca;
 	private int modelo;
@@ -8,11 +8,9 @@ public class Vehiculo extends Poliza {
 	private final int ANIO_ACTUAL = 2024;
 	
 // CONSTRUCTOR	
-	public Vehiculo(Cliente beneficiario, int modelo, double valorVehiculo) {
-		super(beneficiario);
+	public PolizaVehiculo(Cliente cliente, Persona beneficiario, double valorBien, int modelo) {
+		super(cliente, beneficiario, valorBien);
 		this.modelo = modelo;
-		this.setSumaAsegurada(valorVehiculo);
-		this.calcularCuota();
 	}
 
 	
@@ -43,7 +41,7 @@ public class Vehiculo extends Poliza {
 		int antiguedad = ANIO_ACTUAL - this.getModelo();
 		double porcentajeADescontar = antiguedad * 2;		
 		
-		double cuota = (this.getSumaAsegurada() * porcentajeADescontar)/100;
+		double cuota = (this.getValorBien() * porcentajeADescontar)/100;
 
 		return cuota;
 	}

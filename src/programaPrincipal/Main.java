@@ -28,14 +28,17 @@ public class Main {
 		System.out.println(cliente3.toString());
 		
 		
+	//CREO UNA PERSONA QUE VA A SER DE BENEFICIARIO EN LA POLIZA DE SEGUROS
+		Persona pers = new Persona("Gimenez", docu4);
+		
 	//LAS CUATRO POLIZAS DISTINTAS
-		Vida polizaVida = new Vida(cliente1, 50000.00); //SI QUIERO USAR pers ME TIRA UN ERROR
+		PolizaVida polizaVida = new PolizaVida(cliente1, pers, 50000);
 		
-		BienInmueble polizaBnInmueble = new BienInmueble(cliente2, 150);
+		BienInmueble polizaBnInmueble = new BienInmueble(cliente2, cliente2, 150);
 		
-		BienMueble polizaBnMueble = new BienMueble(cliente3, 1500000);
+		BienMueble polizaBnMueble = new BienMueble(cliente3, cliente3, 1500000);
 		
-		Vehiculo polizaVehiculo = new Vehiculo(cliente4, 2010, 5500000);
+		PolizaVehiculo polizaVehiculo = new PolizaVehiculo(cliente4, cliente4, 7066788, 2010);
 		
 		
 	//GUARDO LAS POLIZAS EN UNA LISTA PARA LUEGO ITERAR

@@ -1,5 +1,7 @@
 package modelo;
 
+//NO VAMOS A TENER ATRIBUTOS QUE SEAN CALCULABLES
+
 public class BienInmueble extends Poliza {
 
 
@@ -11,10 +13,9 @@ public class BienInmueble extends Poliza {
 
 	
 // CONSTRUCTOR
-	public BienInmueble(Cliente beneficiario, double mtsCuadrados) {
-		super(beneficiario);
+	public BienInmueble(Cliente cliente, Persona beneficiario, double mtsCuadrados) {
+		super(cliente,beneficiario);
 		this.metrosCuadrados = mtsCuadrados;
-		this.calcularSumaAsegurada();
 	}
 
 	
@@ -26,21 +27,21 @@ public class BienInmueble extends Poliza {
 
 	public void setMetrosCuadrados(double metrosCuadrados) {
 		this.metrosCuadrados = metrosCuadrados;
+		//TODO porque sino deberia recalcular la suma aca...
 	}
 
 	
 // METODOS
-	public void calcularSumaAsegurada() {
+	public double calcularSumaAsegurada() {
 		double sumaAsegurada = this.metrosCuadrados * IMPORTE_MTS2;
-		
-		this.setSumaAsegurada(sumaAsegurada);
+		return sumaAsegurada;
 	}
 
 
 
 	@Override
 	public double calcularCuota() { 
-		double cuota = (getSumaAsegurada() * PORCENTAJE_CUOTA) + GASTO_ADM;
+		double cuota = calcularSumaAsegurada() + GASTO_ADM;
 		return cuota;
 	}
 
